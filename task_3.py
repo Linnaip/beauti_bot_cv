@@ -84,5 +84,7 @@ def find_differences(old_json, new_json, keys_to_compare):
             differences[key] = new_value
     return differences
 
-result = find_differences(json_old, json_new, diff_list)
-print(result)
+
+def test_find_diff():
+    answer = {'services': [{'id': 22222225, 'title': 'Стрижка', 'cost': 1500, 'cost_per_unit': 1500, 'first_cost': 1500, 'amount': 1}], 'datetime': '2022-01-25T13:00:00+03:00'}
+    assert find_differences(json_old, json_new, diff_list) == answer
